@@ -1,0 +1,16 @@
+#!/bin/bash
+
+arg=$1
+text=$2
+timestamp=$(date +%Y-%m-%d-%T)
+function_name () {
+
+	case "$arg" in
+		ERROR) echo "${timestamp} - ERROR - ${text}" ;;
+		WARN)  echo "${timestamp} - WARN - ${text}" ;;
+		INFO)  echo "${timestamp} - INFO - ./log {ERROR/WARN} {string}" ;;
+		*)     echo "${timestamp} ./log INFO for more information" ;;
+	esac
+}
+
+function_name
